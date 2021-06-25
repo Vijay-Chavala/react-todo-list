@@ -275,7 +275,7 @@ form {
 }
 @media screen and (max-width: 500px) {
   .section-center {
-    width: 50%;
+    width: 60%;
   }
   .form-control {
     width: 100%;
