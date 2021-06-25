@@ -1,38 +1,341 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,400;0,500;0,600;0,700;1,400;1,500&display=swap");
+
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  text-align: center;
+  background-color: #f0f8ff;
+  font-weight: 400;
+  text-transform: capitalize;
+  transition: 0.5s;
+}
+.dark_mode {
+  background-color: #24292d;
 }
 
-.App-link {
-  color: #61dafb;
+.dark_mode .section-center {
+  background: #323840;
+}
+.toggle {
+  position: relative;
+  left: 90%;
+  width: 60px;
+  height: 25px;
+  border-radius: 160px;
+  right: -20px;
+  transition: 0.5s;
+  background: #fff;
+  box-shadow: inset 0 8px 60px rgba(0, 0, 0, 0.1),
+    inset 0 8px 8px rgba(0, 0, 0, 0.1), inset 0 -4px 4px rgba(0, 0, 0, 0.05);
+}
+.toggle-dark {
+  background: rgb(36, 36, 36);
+  box-shadow: inset 0 8px 60px rgba(0, 0, 0, 0.1),
+    inset 0 8px 8px rgba(0, 0, 0, 0.1), inset 0 -4px 4px rgba(0, 0, 0, 0.1);
+}
+.toggle .indicator {
+  position: absolute;
+  top: 0;
+  left: 1px;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  transform: scale(0.9);
+  background: linear-gradient(to bottom, #eaeaea, #f9f9f9);
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.1),
+    inset 0 4px 4px rgba(255, 255, 255, 1),
+    inset 0 -4px 4px rgba(255, 255, 255, 1);
+  transition: 0.5s;
+}
+.toggle-dark .indicator {
+  background: linear-gradient(to bottom, #444, #222);
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5),
+    inset 0 4px 4px rgba(255, 255, 255, 0.2),
+    inset 0 -4px 4px rgba(255, 255, 255, 0.2);
+  left: 34px;
+}
+.App .App-dark {
+  background: #24292d;
+}
+.section-center {
+  background-color: #fff;
+  padding: 10px 50px 20px;
+  border-radius: 15px;
+  margin: 80px 0;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.05);
+  max-width: 450px;
+  width: 80%;
+  text-align: center;
+}
+.section-center h1 {
+  font-family: "Josefin Sans", sans-serif;
+  color: #000;
+}
+.dark_mode .section-center h1 {
+  font-family: "Josefin Sans", sans-serif;
+  color: #fff;
+}
+form {
+  text-align: center;
+}
+.form-control {
+  margin: 0;
+  display: inline-block;
+}
+.form-control .todo-text {
+  display: inline-block;
+  padding: 10px;
+  font-family: "Josefin Sans", sans-serif;
+  border-bottom-left-radius: 5px;
+  border-top-left-radius: 5px;
+  border-right: 0;
+  width: 250px;
+  font-size: 16px;
+  text-transform: capitalize;
+  border: 0.5px solid #f0f8ff;
+  color: #000;
+  box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.09);
+}
+.dark_mode .section-center .todo-text,
+.dark_mode .section-center .submit-btn {
+  color: #fff;
+  background-color: #24292d;
+  border: 0.5px solid #1a1a1a;
+}
+.dark_mode .section-center .todo-text:hover,
+.dark_mode .section-center .submit-btn:hover {
+  background-color: #babcbd;
+  border: 0.5px solid #1a1a1a;
+  color: #000;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.form-control .todo-text:focus::-webkit-input-placeholder {
+  color: transparent;
+}
+.form-control .submit-btn {
+  display: inline-block;
+  padding: 10px;
+  font-family: "Josefin Sans", sans-serif;
+  border-bottom-right-radius: 5px;
+  border-top-right-radius: 5px;
+  width: 100px;
+  font-size: 16px;
+  text-transform: capitalize;
+  border: 0.5px solid #f0f8ff;
+  background-color: #e9f5ff;
+  color: #000;
+  transition: 0.3s;
+  box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.09);
+}
+.dark_mode .noi-clearAll-sec h4 {
+  color: #8d8d8d;
+}
+.noi-clearAll-sec {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: "Josefin Sans", sans-serif;
+  margin: 10px;
+}
+.noi-clearAll-sec .clear-btn {
+  border: none;
+  background-color: #ffa2a2;
+  padding: 8px 15px;
+  border-radius: 10px;
+  transition: all 0.3s;
+  font-size: 14px;
+  font-family: "Josefin Sans", sans-serif;
+}
+.noi-clearAll-sec .clear-btn:hover {
+  background-color: #e6e6e6;
+}
+.dark_mode .noi-clearAll-sec .clear-btn:hover {
+  background-color: #929292;
+}
+
+/*alert*/
+.alert {
+  font-size: 14px;
+  padding: 5px;
+  width: 50%;
+  margin: 10px auto;
+  text-align: center;
+  border-radius: 5px;
+  font-family: "Josefin Sans", sans-serif;
+}
+.alert-danger {
+  background-color: rgb(255, 92, 92);
+}
+.alert-success {
+  background-color: rgb(140, 255, 140);
+}
+
+/*list*/
+.dark_mode_list {
+  background: #323840;
+}
+
+.list-container {
+  background-color: rgb(255, 253, 253);
+  box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.09);
+  margin: 10px 0;
+  border-radius: 5px;
+  transition: all 0.3s;
+  width: 100%;
+}
+.list-container:hover {
+  background-color: rgb(243, 242, 242);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.03);
+}
+
+.dark_mode_list .list-container {
+  background-color: #24292d;
+  color: #fff;
+  transition: all 0.3s;
+}
+.dark_mode_list .list-container:hover {
+  background: #929292;
+}
+
+.list-container .content {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  padding: 0 10px;
+}
+.list-container .content p {
+  font-size: 15px;
+  font-family: "Josefin Sans", sans-serif;
+  text-transform: capitalize;
+  padding-left: 5px;
+  color: #000;
+  font-weight: 400;
+  text-align: left;
+  width: 80%;
+  overflow-wrap: break-word;
+}
+.dark_mode_list .list-container .content p {
+  color: #fff;
+}
+
+.list-container .content .btn-container button {
+  border: none;
+  transition: all 0.3s;
+  font-size: 18px;
+  color: rgb(113, 189, 0);
+  border-radius: 50%;
+  text-align: center;
+  background: none;
+}
+
+.list-container .content .btn-container button:last-child {
+  margin-left: 10px;
+  color: rgb(252, 70, 70);
+}
+.list-container .content .btn-container button:hover {
+  color: green;
+}
+.list-container .content .btn-container button:last-child:hover {
+  margin-left: 10px;
+  color: rgb(177, 0, 0);
+}
+@media screen and (max-width: 600px) {
+  .section-center {
+    width: 60%;
   }
-  to {
-    transform: rotate(360deg);
+
+  .form-control .todo-text {
+    width: 55%;
+    font-size: 14px;
+  }
+  .form-control .submit-btn {
+    width: 100px;
+    font-size: 16px;
+  }
+  .list-container {
+    width: 100%;
+  }
+
+  .list-container .content p {
+    font-size: 14px;
+    text-align: left;
+    width: 70%;
+    overflow-wrap: break-word;
+  }
+  .btn-container {
+    display: flex;
+    align-items: center;
+  }
+  .btn-container button {
+    padding: 0;
+    margin: 0;
+  }
+}
+@media screen and (max-width: 500px) {
+  .section-center {
+    width: 50%;
+  }
+  .form-control {
+    width: 100%;
+    display: block;
+  }
+  .form-control .todo-text {
+    width: 91%;
+    display: block;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    font-size: 12px;
+  }
+  .form-control .submit-btn {
+    width: 100%;
+    border-radius: 5px;
+    display: block;
+    font-size: 12px;
+  }
+
+  .noi-clearAll-sec .clear-btn {
+    border: none;
+    background-color: #ffa2a2;
+    padding: 8px 15px;
+    border-radius: 10px;
+    transition: all 0.3s;
+    font-size: 12px;
+    font-family: "Josefin Sans", sans-serif;
+  }
+  .list-container .content {
+    overflow-wrap: anywhere;
+    white-space: normal;
+  }
+  .alert {
+    font-size: 10px;
+    width: 100%;
+  }
+  .noi-clearAll-sec .clear-btn {
+    padding: 8px;
+  }
+
+  .noi-clearAll-sec .clear-btn,
+  .noi-clearAll-sec h4 {
+    font-size: 12px;
+  }
+  .list-container .content p,
+  .list-container .content .btn-container button {
+    font-size: 14px;
+  }
+
+  .toggle {
+    width: 50px;
+    height: 20px;
+  }
+  .toggle .indicator {
+    left: 1px;
+    width: 20px;
+    height: 20px;
+  }
+
+  .toggle-dark .indicator {
+    left: 29px;
   }
 }

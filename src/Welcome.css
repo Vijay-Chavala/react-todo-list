@@ -1,0 +1,38 @@
+.welcome-component {
+  position: relative;
+  color: #000;
+  display: flex;
+  margin: 80px 0;
+  border-radius: 10px;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.09);
+  height: 80vh;
+  width: 60%;
+  transition: 1s;
+}
+
+h2 {
+  font-family: "Josefin Sans", sans-serif;
+  transition: 1s;
+}
+.click-welcome-component h2 {
+  transform: scale(2);
+}
+@media screen and (max-width: 500px) {
+  h2 {
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 16px;
+    transition: 1s;
+  }
+  .welcome-component {
+    height: 60vh;
+    margin: 80px 0;
+    width: 70%;
+  }
+
+  .click-welcome-component h2 {
+    transform: scale(1.4);
+  }
+}
