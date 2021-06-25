@@ -100,7 +100,7 @@ function App() {
           <div className={`toggle ${darkMode ? "toggle-dark" : "toggle"}`}>
             <i className="indicator" onClick={() => setDarkMode(!darkMode)}></i>
           </div>
-          <h1>To-Do List TEst</h1>
+          <h1>To-Do List</h1>
           <form onSubmit={handleSubmit}>
             {alert.show && (
               <Alert {...alert} list={list} removeAlert={showAlert} />
