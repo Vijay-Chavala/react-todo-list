@@ -242,7 +242,9 @@ form {
   color: rgb(177, 0, 0);
 }
 @media screen and (max-width: 600px) {
- 
+  .section-center {
+    width: 70%;
+  }
 
   .form-control .todo-text {
     width: 55%;
@@ -272,7 +274,9 @@ form {
   }
 }
 @media screen and (max-width: 500px) {
-  
+  .section-center {
+    width: 60%;
+  }
   .form-control {
     width: 100%;
     display: block;
